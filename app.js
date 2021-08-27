@@ -19,7 +19,7 @@ require('dotenv').config()
 
 // Set up Session
 app.use(session({
-    secret: "",
+    secret: "secretkey",
     saveUninitialized: true,
     resave: false
 }))
@@ -27,6 +27,8 @@ app.use(session({
 // Set up routers
 app.use('/index', indexRouter)
 app.use('/blog', blogRouter)
+
+app.use(express.static('public'))
 
 app.use(express.urlencoded())
 app.use(express.json())

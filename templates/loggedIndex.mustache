@@ -81,16 +81,15 @@
     </header>
 
     <main id="main-content">
-        <section id="registerBox">
-            <h2>Log In</h2>
-            <p>{{errorMsg}}</p>
-            <p>{{message}}</p>
-            <form method="POST" action="/index/login">
-                <input type="text" placeholder="Username" name="username" required />
-                <input type="password" placeholder="Password" name="password" required />
-                <button>Login</button>
-            </form>
+        {{#allBlogs}}
+
+        <section id="middleContainer">
+            <img src={{image}} />
+            <h3>{{title}}</h3>
+            <p>{{createdAt}}</p>
         </section>
+        
+        {{/allBlogs}}
     </main>
 
 

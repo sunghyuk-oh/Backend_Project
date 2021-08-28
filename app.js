@@ -2,8 +2,9 @@ global.express = require('express')
 const app = express()
 const mustacheExpress = require('mustache-express')
 global.session = require('express-session')
-global.bcryt = require('bcryptjs')
+global.bcrypt = require('bcryptjs')
 global.authentication = require('./authentication/auth')
+global.models = require('./models')
 const indexRouter = require('./routers/index')
 const blogRouter = require('./routers/blog')
 
@@ -24,14 +25,17 @@ app.use(session({
     resave: false
 }))
 
-// Set up routers
-app.use('/index', indexRouter)
-app.use('/blog', blogRouter)
-
-app.use(express.static('public'))
-
+// Set up Middlewares
 app.use(express.urlencoded())
 app.use(express.json())
+
+// Set up routers
+app.use('/index', indexRouter)
+app.use('/blog', authentication, blogRouter)
+
+// Set up Static Resources
+app.use(express.static('public'))
+
 
 
 app.listen(PORT, () => console.log('Server is running...'))

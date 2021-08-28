@@ -82,13 +82,13 @@
 
     <main id="main-content">
         <section id="registerBox">
-            <h2>Log In</h2>
+            <h2>Share Your Experience</h2>
             <p>{{errorMsg}}</p>
-            <p>{{message}}</p>
-            <form method="POST" action="/index/login">
-                <input type="text" placeholder="Username" name="username" required />
-                <input type="password" placeholder="Password" name="password" required />
-                <button>Login</button>
+            <form method="POST" action="/blog/post-blog">
+                <input type="text" placeholder="Blog Title" name="title" required/>
+                <input type="text" placeholder="Blog description" name="bodyText" required/>
+                <input type="text" placeholder="Image URL" name="image" />
+                <button>Post</button>
             </form>
         </section>
     </main>

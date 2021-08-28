@@ -12,15 +12,17 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             models.Blog.hasMany(models.Comment, {
                 as: 'comments',
-                foreignKey: 'blog_id'
+                foreignKey: "blog_id"
             })
         }
     };
     Blog.init({
         title: DataTypes.STRING,
-        body_text: DataTypes.STRING,
+        body_text: DataTypes.TEXT,
         region: DataTypes.STRING,
-        keyword: DataTypes.STRING
+        keyword: DataTypes.STRING,
+        image: DataTypes.STRING,
+        user_id: DataTypes.INTEGER
     }, {
         sequelize,
         modelName: 'Blog',

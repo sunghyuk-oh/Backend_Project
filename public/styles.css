@@ -1,0 +1,42 @@
+#navbarSupportedContent {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+}
+
+#postBtn {
+    align-content: center;
+    display: flex;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: aliceblue;
+    height: 800px;
+}
+
+#middleContainer {
+    display: flex;
+    background-color: darkgrey;
+}
+
+header {
+    text-align: center;
+    margin: auto;
+}
+
+.btn btn-secondary {
+    float: right;
+}

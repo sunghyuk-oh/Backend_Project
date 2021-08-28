@@ -12,12 +12,15 @@ module.exports = {
                 type: Sequelize.STRING
             },
             body_text: {
-                type: Sequelize.STRING
+                type: Sequelize.TEXT
             },
             region: {
                 type: Sequelize.STRING
             },
             keyword: {
+                type: Sequelize.STRING
+            },
+            image: {
                 type: Sequelize.STRING
             },
             user_id: {

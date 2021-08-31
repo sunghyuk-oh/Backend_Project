@@ -1,0 +1,56 @@
+body {
+    background-color: #708090;
+}
+
+
+#postBtn {
+align-content: center;
+display: flex;
+}
+
+.container-fluid {
+display: flex;
+
+flex-direction: row;
+position: relative;
+justify-content: flex-start;
+text-align: center;
+}
+
+.container-fluid h1{
+font-size: xxx-large;
+}
+
+
+#middleContainer {
+    display: flex;
+    background-color: darkgrey;
+}
+
+
+
+header div{
+    text-align: center;
+    font-size: 69px;
+}
+
+.btn btn-secondary {
+    float: right;
+}
+
+#main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#pbox {
+    margin-left: 3.75em;
+}
+
+#pic img{
+    height:33em;
+
+}

@@ -20,7 +20,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/index">
+            <a class="navbar-brand" href="/">
                 <h1>TB</h1>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -66,7 +66,7 @@
                             <button type="button" class="btn btn-secondary" id="">Post A Blog</button>
                         </a>
 
-                        <a class="nav-link" href="/index/login">Login</a>
+                        <a class="nav-link" href="/login">Login</a>
 
                         <a href="/index/register">
                             <button type="button" class="btn btn-secondary">Create Account</button>
@@ -82,10 +82,11 @@
 
     <main id="main-content">
         <section id="registerBox">
+            {{loginErrorMsg}}
             <h2>Log In</h2>
             <p>{{errorMsg}}</p>
             <p>{{message}}</p>
-            <form method="POST" action="/index/login">
+            <form method="POST" action="/login">
                 <input type="text" placeholder="Username" name="username" required />
                 <input type="password" placeholder="Password" name="password" required />
                 <button>Login</button>
@@ -97,7 +98,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="/main.js"></script>
+    <script src="/async.js"></script>
 </body>
 
 </html>

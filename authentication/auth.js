@@ -1,12 +1,15 @@
 function authenticate(req, res, next) {
     if (req.session) {
         if (req.session.username) {
+            res.locals.isAuthenticated = true
             next()
         } else {
-            res.render('index', { loginErrorMsg: 'Please Log In First' })
+            res.locals.loginErrorMsg = 'Please Log in First'
+            res.redirect('/login')
         }
     } else {
-        res.render('login', { loginErrorMsg: 'Please Log In First' })
+        res.locals.loginErrorMsg = 'Please Log in First'
+        res.redirect('/login')
     }
 }
 

@@ -3,7 +3,7 @@ router = express.Router()
 router.get('/', async(req, res) => {
     const blogs = await models.Blog.findAll({})
 
-    res.render('loggedIndex', { allBlogs: blogs })
+    res.render('index', { allBlogs: blogs })
 })
 
 router.get('/post-blog', (req, res) => {
@@ -25,9 +25,22 @@ router.post('/post-blog', async(req, res) => {
     res.redirect('/blog')
 })
 
-// LEFT FROM HERE
-router.post('/leave-comment', (req, res) => {
-    const { bodyText } = req.body
+// Leave a comment
+router.get('/leave-comment', async(req, res) => {
+    const blogs_by_id = await models.Comment.findAll({})
+
+    res.json(blogs_by_id)
+})
+
+router.post('/leave-comment', async(req, res) => {
+    const { bodyText, blogId } = req.body
+
+    const comment = await models.Comment.create({
+        body_text: bodyText,
+        blog_id: blogId
+    })
+
+    res.json({ success: true })
 })
 
 module.exports = router

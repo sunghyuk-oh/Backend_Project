@@ -1,3 +1,5 @@
+const { sequelize } = require("../models")
+
 router = express.Router()
 
 router.get('/', async(req, res) => {
@@ -7,24 +9,20 @@ router.get('/', async(req, res) => {
 })
 
 router.get('/details/:id', async(req, res) => {
-    const blog_id = req.params.id
+    if (req.session) {
+        if (req.session.username) {
+            res.locals.isAuthenticated = true
+        }
+    }
+    const blog_id = parseInt(req.params.id)
 
     const blog = await models.Blog.findByPk(blog_id)
-    console.log(blog)
-    res.render('blogDetails', blog)
-})
 
-// LEFT FROM HERE
-router.post('/leave-comment', (req, res) => {
-    const { bodyText } = req.body
+    res.render('blogDetails', blog.dataValues)
 })
 
 router.get('/register', (req, res) => {
     res.render('register')
-})
-
-router.get('/login', (req, res) => {
-    res.render('login')
 })
 
 router.post('/register', (req, res) => {
@@ -45,6 +43,10 @@ router.post('/register', (req, res) => {
             res.render('register', { errorMsg: 'Please try to register again.' })
         }
     })
+})
+
+router.get('/login', (req, res) => {
+    res.render('login')
 })
 
 router.post('/login', (req, res) => {
@@ -72,14 +74,16 @@ router.post('/login', (req, res) => {
     })
 })
 
-router.get('/logout', (req, res) => {
-    req.session.destroy(error => {
-        req.clearCookie('connect.sid')
-    })
-})
-
-router.post('/logout', (req, res) => {
-    res.redirect('/index')
+router.get('/logout', (req, res, next) => {
+    if (req.session) {
+        req.session.destroy((error) => {
+            if (error) {
+                next(error)
+            } else {
+                res.redirect('/')
+            }
+        })
+    }
 })
 
 module.exports = router

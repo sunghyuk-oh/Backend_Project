@@ -29,9 +29,14 @@ app.use(session({
 app.use(express.urlencoded())
 app.use(express.json())
 
+app.use((req, res, next) => {
+    res.locals.isAuthenticated = false
+    next()
+})
+
 // Set up routers
-app.use('/index', indexRouter)
 app.use('/blog', authentication, blogRouter)
+app.use('/', indexRouter)
 
 // Set up Static Resources
 app.use(express.static('public'))

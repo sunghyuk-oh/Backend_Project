@@ -114,7 +114,9 @@
 
        
             <div id="commentBox">
-                
+                {{#comments}}
+                    <p>{{dataValues.body_text}}</p>
+                {{/comments}}
             </div>
             <div>
                 <form id="commentFormBox">

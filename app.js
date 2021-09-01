@@ -34,13 +34,12 @@ app.use((req, res, next) => {
     next()
 })
 
-// Set up routers
-app.use('/blog', authentication, blogRouter)
-app.use('/', indexRouter)
-
 // Set up Static Resources
 app.use(express.static('public'))
 
+// Set up routers
+app.use('/blog', authentication, blogRouter)
+app.use('/', indexRouter)
 
 
 app.listen(PORT, () => console.log('Server is running...'))

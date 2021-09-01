@@ -103,6 +103,7 @@ header div{
 #blogBody{
     display:flex;
     width: 50em;
+    overflow
    
     text-align: center;
 }

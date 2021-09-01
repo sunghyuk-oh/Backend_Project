@@ -111,13 +111,10 @@
                 <h5>{{body_text}}</h5>
             </div>
         </div>
-   </div>
+    </div>
     <br>
 
        
-    <div id="commentBox">
-
-    </div>
     <div id="comments">
         <form id="commentFormBox">
             <input id="blogIdTextBox" type="hidden" value={{id}} name="blogId">
@@ -125,7 +122,13 @@
             <button>comment</button>
         <form>
     </div>
- 
+
+    <div id="commentBox">
+        {{#comments}}
+            <p>{{dataValues.body_text}}</p>
+        {{/comments}}
+    </div>
+
 
     <footer>
     <br>

@@ -8,6 +8,7 @@ router.get('/', async(req, res) => {
     res.render('index', { allBlogs: blogs })
 })
 
+// Display the blog details page
 router.get('/details/:id', async(req, res) => {
     if (req.session) {
         if (req.session.username) {
@@ -16,11 +17,59 @@ router.get('/details/:id', async(req, res) => {
     }
     const blog_id = parseInt(req.params.id)
 
-    const blog = await models.Blog.findByPk(blog_id)
-
+    const blog = await models.Blog.findByPk(blog_id, {
+        include: [{
+            model: models.Comment,
+            as: 'comments'
+        }]
+    })
     res.render('blogDetails', blog.dataValues)
 })
 
+// Leave and Post a comment
+router.get('/:id/leave-comment', async(req, res) => {
+    const blogs_by_id = await models.Comment.findAll({
+        where: {
+            blog_id: req.params.id
+        }
+    })
+
+    res.json(blogs_by_id)
+})
+
+router.post('/leave-comment', async(req, res) => {
+    const { bodyText, blogId } = req.body
+
+    const comment = await models.Comment.create({
+        body_text: bodyText,
+        blog_id: blogId
+    })
+
+    res.json({ success: true, oneComment: comment.dataValues })
+})
+
+// Sort blogs by Newest and Oldest
+router.get('/sort-by-newest', async(req, res) => {
+    const newestSort = await models.Blog.findAll({
+        order: [
+            ['id', 'DESC']
+        ]
+    })
+
+    res.json(newestSort)
+})
+
+router.get('/sort-by-oldest', async(req, res) => {
+    const oldestSort = await models.Blog.findAll({
+        order: [
+            ['id', 'ASC']
+        ]
+    })
+
+    res.json(oldestSort)
+})
+
+// Register a user
 router.get('/register', (req, res) => {
     res.render('register')
 })
@@ -45,6 +94,7 @@ router.post('/register', (req, res) => {
     })
 })
 
+// Login a user
 router.get('/login', (req, res) => {
     res.render('login')
 })
@@ -74,6 +124,7 @@ router.post('/login', (req, res) => {
     })
 })
 
+// Logout a user
 router.get('/logout', (req, res, next) => {
     if (req.session) {
         req.session.destroy((error) => {

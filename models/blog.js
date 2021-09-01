@@ -12,7 +12,8 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             models.Blog.hasMany(models.Comment, {
                 as: 'comments',
-                foreignKey: "blog_id"
+                foreignKey: "blog_id",
+                onDelete: 'CASCADE'
             })
         }
     };

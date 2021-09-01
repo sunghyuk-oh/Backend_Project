@@ -3,6 +3,12 @@ const { sequelize } = require("../models")
 router = express.Router()
 
 router.get('/', async(req, res) => {
+    if (req.session) {
+        if (req.session.username) {
+            res.locals.isAuthenticated = true
+        }
+    }
+
     const blogs = await models.Blog.findAll({})
 
     res.render('index', { allBlogs: blogs })

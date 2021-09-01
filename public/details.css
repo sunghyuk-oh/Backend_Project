@@ -8,6 +8,7 @@
 
 body {
     background-color: #708090;
+    font-family: 'Poppins', sans-serif;
 }
 
 #postBtn {
@@ -21,12 +22,12 @@ body {
     position: relative;
     justify-content: flex-start;
     text-align: center;
-
 }
 
-.container-fluid h1{
+.container-fluid h1 {
     font-size: xxx-large;
 }
+
 
 /*/#main-content{
     display: flex;
@@ -35,7 +36,6 @@ body {
     background-color: aliceblue;
     height: 800px;
 }/*/
-
 
 #middleContainer {
     display: flex;
@@ -47,7 +47,7 @@ header {
     font-size: xxx-large;
 }
 
-header div{
+header div {
     text-align: center;
 }
 
@@ -59,7 +59,6 @@ header div{
     display: flex;
     flex-direction: column;
     height: fit-content;
-
     align-items: center;
 }
 
@@ -70,7 +69,6 @@ header div{
     align-items: center;
     height: 45em;
 }
-
 
 .fill {
     display: flex;
@@ -100,7 +98,7 @@ header div{
     margin: auto;
 }
 
-#blogBody{
+#blogBody {
     width: 50em;
     height: 10em;
     text-align: center;
@@ -112,19 +110,18 @@ header div{
     margin-left: 5.6em;
     border: solid;
     border-width: .2em;
-    border-radius:em;
+    border-radius: em;
     border-color: black;
 }
 
-#comments { 
+#comments {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;   
+    justify-content: center;
 }
 
 #commentBtn {
     display: flex;
     justify-content: center;
 }
-

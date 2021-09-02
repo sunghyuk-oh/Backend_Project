@@ -62,9 +62,23 @@ header div{
     border-radius: 5em;
     margin: .3em;
     border-color: black;
-    height: 27em;
+    height: 30em;
     width: 25em;
 
+}
+
+form {
+    margin: auto;
+}
+
+#head {
+    font-size: 3.5em;
+    margin: auto;
+}
+
+input {
+    margin: .5em;
+    width:15em;
 }
 
 

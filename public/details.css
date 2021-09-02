@@ -1,10 +1,4 @@
-/*#navbarSupportedContent {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    justify-content: space-between;
-    text-align: center;
-}*/
+
 
 body {
     background-color: #708090;
@@ -24,17 +18,10 @@ body {
 
 }
 
-.container-fluid h1{
-    font-size: xxx-large;
+.container-fluid img{
+    height: 3em;
+    width: 5em;
 }
-
-/*/#main-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: aliceblue;
-    height: 800px;
-}/*/
 
 
 #middleContainer {
@@ -59,7 +46,6 @@ header div{
     display: flex;
     flex-direction: column;
     height: fit-content;
-
     align-items: center;
 }
 
@@ -68,7 +54,7 @@ header div{
     flex-direction: column;
     width: 60em;
     align-items: center;
-    height: 45em;
+    height: 55em;
 }
 
 
@@ -103,8 +89,6 @@ header div{
 #blogBody{
     display:flex;
     width: 50em;
-    overflow
-   
     text-align: center;
 }
 
@@ -120,13 +104,36 @@ header div{
 
 #comments { 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     justify-content: center;   
 }
 
-#commentBtn {
-    display: flex;
+#commentFormBox {
+    display:flex;
     justify-content: center;
 }
 
+
+#commentBtn {
+    color: white;
+    border: solid;
+    border-width: .1em;
+    height: 58px;
+    background-color:#212529;
+}
+
+#commentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width:50em;
+    font-size: x-large;
+}
+
+#each {
+    display:flex;
+    border: solid .1em;
+
+}

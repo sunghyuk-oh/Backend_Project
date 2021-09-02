@@ -43,10 +43,11 @@ header div{
 
 #main-content {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    min-height: 90vh;
+    min-height: 75vh;
 }
 
 #head {
@@ -57,16 +58,28 @@ header div{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    border: solid;
-    border-width: .5em;
-    border-radius: 5em;
-    margin: .3em;
-    border-color: black;
-    height: 27em;
-    width: 25em;
-
+    
 }
 
+form {
+    margin: auto;
+}
+
+#head {
+    font-size: 3.5em;
+    margin: auto;
+}
+
+input {
+    margin: .5em;
+    width: 40em;
+}
+
+#blogBody {
+    width: 40em;
+    height: 25em;
+
+}
 
 #loginbox {
     margin: auto;

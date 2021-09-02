@@ -13,7 +13,7 @@
 
     <title>Travel Blog</title>
 
-    <link rel="stylesheet" href="/login.css">
+    <link rel="stylesheet" href="/register.css">
 </head>
 
 <body>
@@ -21,7 +21,7 @@
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">
-                <h1>TB</h1>
+                <img src="mainlogo.png">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -31,20 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li> -->
+                    
                     <li class="nav-item">
                         <div id="postBtn" style="float: right;">
                             
@@ -71,7 +58,7 @@
                         <a class="nav-link" href="/logout">Logout</a>
 
                         <a href="/">
-                            <button type="button" class="btn btn-secondary">Profile</button>
+                            <button style="color:white;" type="button" class="btn btn-outline-secondary">Profile</button>
                         </a>
                         {{/isAuthenticated}}
                     </div>
@@ -79,27 +66,25 @@
         </div>
     </nav>
 
-    <header>
-        <div>Register</div>
-    </header>
 
     <main id="main-content">
         <section id="registerBox">
-            <h2>Register and Share Your Story</h2>
+            <div id="head">Create Account</div>
             <p>{{errorMsg}}</p>
             <form method="POST" action="/register">
                 <input type="text" placeholder="First Name" name="firstName" required />
+                <br>
                 <input type="text" placeholder="Last Name" name="lastName" required />
+                <br>
                 <input type="text" placeholder="Username" name="username" required />
+                <br>
                 <input type="password" placeholder="Password" name="password" required />
+                <br>
                 <input type="text" placeholder="Email" name="email" required />
+                <br>
                 <button>Register</button>
             </form>
         </section>
-
-        <div id="pic">
-            <img src="globe.png">
-        </div>
     </main>
 
 

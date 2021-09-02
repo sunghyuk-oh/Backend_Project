@@ -18,80 +18,86 @@
 
         <title>Travel Blog</title>
 
-        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/blogPost.css">
     </head>
 
     <body>
 
-         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">
-                <h1>TB</h1>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="/mainlogo.png">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    <li class="nav-item">
-                        <div id="postBtn" style="float: right;">
+                    
+                        <li class="nav-item">
+                            <div id="postBtn" style="float: right;">
+                                
+                            </div>
+                        </li>
+                        <li class="nav-item">
                             
+                        </li>
+                    </ul>
+                        <div class="d-flex">
+                            <p>{{loginErrorMsg}}</p>
+                            <a href="/blog/post-blog">
+                                <button style="color:white;" type="button" class="btn btn-outline-secondary ">Post A Blog</button>
+                            </a>
+                            {{^isAuthenticated}}
+                            <a class="nav-link" href="/login">Login</a>
+
+                            <a href="/register">
+                                <button style="color:white;" type="button" class="btn btn-outline-secondary">Create Account</button>
+                            </a>
+        
+                            {{/isAuthenticated}}
+                            {{#isAuthenticated}}
+                            <a class="nav-link" href="/logout">Logout</a>
+
+                            <a href="/blog/display-profile">
+                                <button style="color:white;" type="button" class="btn btn-outline-secondary">Profile</button>
+                            </a>
+                            {{/isAuthenticated}}
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        
-                    </li>
-                </ul>
-                    <div class="d-flex">
-                        <p>{{loginErrorMsg}}</p>
-                        <a href="/blog/post-blog">
-                            <button style="color:white;" type="button" class="btn btn-outline-secondary ">Post A Blog</button>
-                        </a>
-                        {{^isAuthenticated}}
-                        <a class="nav-link" href="/login">Login</a>
-
-                        <a href="/register">
-                            <button style="color:white;" type="button" class="btn btn-outline-secondary">Create Account</button>
-                        </a>
-    
-                        {{/isAuthenticated}}
-                        {{#isAuthenticated}}
-                        <a class="nav-link" href="/logout">Logout</a>
-
-                        <a href="/blog/display-profile">
-                            <button type="button" class="btn btn-secondary">Profile</button>
-                        </a>
-                        {{/isAuthenticated}}
-                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <header>
-        <h1>Travel Blog</h1>
-    </header>
-
-    <main id="main-content">
-        <section id="registerBox">
-            <h2>Share Your Experience</h2>
-            <p>{{errorMsg}}</p>
-            <form method="POST" action="/blog/post-blog">
-                <input type="text" placeholder="Blog Title" name="title" required/>
-                <input type="text" placeholder="Blog description" name="bodyText" required/>
-                <input type="text" placeholder="Image URL" name="image" />
-                <button>Post</button>
-            </form>
-        </section>
-    </main>
+        <header>
+            <div>BlogBuster</div>
+        </header>
+        
+        <main id="main-content">
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <script src="/async.js"></script>
-</body>
+            <section id="registerBox">
+                <h3>Share Your Experience</h3>
+                <p>{{errorMsg}}</p>
+                <form method="POST" action="/blog/post-blog">
+                    <input type="text" placeholder="Blog Title" name="title" required/>
+                    <br>
+                    <input type="text" placeholder="Image URL" name="image" />
+                    <br>
+                    <textarea id="blogBody" type="text" placeholder="Blog description" name="bodyText" required></textarea>
+                    <br>
+                    <button>Post</button>
+                </form>
+            </section>
+        </main>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+        <script src="/async.js"></script>
+    </body>
 
 </html>

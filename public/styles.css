@@ -1,11 +1,3 @@
-/*#navbarSupportedContent {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    justify-content: space-between;
-    text-align: center;
-}*/
-
 body {
     background-color: #708090;
     font-family: 'Poppins', sans-serif;
@@ -14,6 +6,9 @@ body {
 #postBtn {
     align-content: center;
     display: flex;
+    color: white;
+    border: solid;
+    border-width: .1em;
 }
 
 .container-fluid {
@@ -24,23 +19,46 @@ body {
     text-align: center;
 }
 
-.container-fluid h1 {
-    font-size: xxx-large;
+.container-fluid img {
+    height: 3em;
+    width: 5em;
 }
 
+header div {
+    margin: .25em auto;
+    -webkit-text-stroke: 1.5px white;
+    text-align: center;
+    font-size: 5.5em;
+    font-weight: 900;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
-/*/#main-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: aliceblue;
-    height: 800px;
-}/*/
+#sortBy {
+    color: white;
+    font-size: medium;
+    margin-left: 2em;
+    margin-bottom: .5em;
+}
+
+#newestBtn {
+    color: white;
+    border: solid;
+    border-width: .1em;
+}
+
+#oldestBtn {
+    color: white;
+    border: solid;
+    border-width: .1em;
+}
 
 #middleContainer {
     display: flex;
     background-color: darkgrey;
 }
+
+
+/* Merge Conflict */
 
 header div {
     text-align: center;
@@ -63,6 +81,15 @@ header div {
 #container {
     display: flex;
     flex-direction: column;
+}
+
+#blogTitle {
+    text-decoration: none;
+    color: black;
+}
+
+#blogTitle:hover {
+    color: white;
 }
 
 .fill {

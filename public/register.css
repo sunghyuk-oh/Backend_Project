@@ -1,26 +1,26 @@
 body {
     background-color: #708090;
-    font-family: 'Poppins', sans-serif;
 }
 
+
 #postBtn {
-    align-content: center;
-    display: flex;
+align-content: center;
+display: flex;
 }
 
 .container-fluid {
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    justify-content: flex-start;
-    text-align: center;
+display: flex;
+
+flex-direction: row;
+position: relative;
+justify-content: flex-start;
+text-align: center;
 }
 
-.container-fluid h1 {
-    font-size: xxx-large;
+.container-fluid h1{
+font-size: xxx-large;
 }
-
-.container-fluid img {
+.container-fluid img{
     height: 3em;
     width: 5em;
 }
@@ -30,7 +30,9 @@ body {
     background-color: darkgrey;
 }
 
-header div {
+
+
+header div{
     text-align: center;
     font-size: 69px;
 }
@@ -51,7 +53,7 @@ header div {
     font-size: 4.5em;
 }
 
-#registerBox {
+#registerBox{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -60,9 +62,25 @@ header div {
     border-radius: 5em;
     margin: .3em;
     border-color: black;
-    height: 27em;
+    height: 30em;
     width: 25em;
+
 }
+
+form {
+    margin: auto;
+}
+
+#head {
+    font-size: 3.5em;
+    margin: auto;
+}
+
+input {
+    margin: .5em;
+    width:15em;
+}
+
 
 #loginbox {
     margin: auto;

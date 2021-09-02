@@ -16,6 +16,11 @@ body {
     text-align: center;
 }
 
+.container-fluid img {
+    height: 3em;
+    width: 5em;
+}
+
 .container-fluid h1 {
     font-size: xxx-large;
 }

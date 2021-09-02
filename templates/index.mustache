@@ -72,18 +72,17 @@
         <br>
         <div id="mainImageBox">
             {{#allBlogs}}
-                <div id="container">
-                    <div class="fill">
-                        <img src="{{dataValues.image}}" alt="">
-                    </div>
-                    <div id="description">
-                        <a id="blogTitle" href="/details/{{id}}">
-                            <h3>{{title}}</h3>
-                        </a>
-                        <p>{{createdAt}}</p>
-                    </div>
-                </div>    
-            
+            <div id="container">
+                <div class="fill">
+                    <img src="{{dataValues.image}}" alt="">
+                </div>
+                <div id="description">
+                    <a id="blogTitle" href="/details/{{id}}">
+                        <h3>{{title}}</h3>
+                    </a>
+                    <p>{{createdAt}}</p>
+                </div>
+            </div>    
             {{/allBlogs}}
         </div>
     

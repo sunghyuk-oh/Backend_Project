@@ -2,9 +2,11 @@ body {
     background-color: #708090;
     font-family: 'Poppins', sans-serif;
 }
+
 #postBtn {
     margin-right: 2em;
 }
+
 postBtn {
     align-content: center;
     display: flex;
@@ -26,7 +28,7 @@ postBtn {
     width: 5em;
 }
 
-header div {    
+header div {
     font-size: 69px;
     margin: .25em auto;
     -webkit-text-stroke: 1.5px white;
@@ -59,8 +61,6 @@ header div {
     display: flex;
     background-color: darkgrey;
 }
-
-
 
 .btn btn-secondary {
     float: right;
@@ -109,7 +109,8 @@ header div {
 
 #description {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: flex-end;
     text-align: center;
     height: 6em;
     width: 20em;
@@ -119,15 +120,10 @@ header div {
 
 
 /*    *******MEDIA QUERIES********* */
-@media only screen and (min-width:100px) and (max-width:415px){
 
-    #navBar{
-        width: 26em;
-    }
-
+@media only screen and (min-width:100px) and (max-width:415px) {
     header {
         text-align: center;
-
     }
     #mainImageBox {
         display: flex;
@@ -163,12 +159,8 @@ header div {
 }
 
 @media only screen and (min-width:416px)and (max-width:767px) {
-    #navBar{
-        width: 92%;
-    }
     header {
         text-align: center;
-
     }
     #mainImageBox {
         display: flex;

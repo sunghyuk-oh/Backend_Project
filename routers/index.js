@@ -2,6 +2,27 @@ const { sequelize } = require("../models")
 
 router = express.Router()
 
+
+function formatDate(blogs) {
+    blogs.map((blog) => {
+        let newDate = new Date(blog.dataValues.createdAt)
+
+        const month = newDate.getMonth() + 1
+        const day = newDate.getDate()
+        const year = newDate.getFullYear()
+        blog.dataValues.createdAt = `${month}/${day}/${year}`
+    })
+}
+
+function formatDate2(blog) {
+    let newDate = new Date(blog.dataValues.createdAt)
+
+    const month = newDate.getMonth() + 1
+    const day = newDate.getDate()
+    const year = newDate.getFullYear()
+    blog.dataValues.createdAt = `${month}/${day}/${year}`
+}
+
 router.get('/', async(req, res) => {
     if (req.session) {
         if (req.session.username) {
@@ -10,6 +31,7 @@ router.get('/', async(req, res) => {
     }
 
     const blogs = await models.Blog.findAll({})
+    formatDate(blogs)
 
     res.render('index', { allBlogs: blogs })
 })
@@ -29,6 +51,7 @@ router.get('/details/:id', async(req, res) => {
             as: 'comments'
         }]
     })
+    formatDate2(blog)
     res.render('blogDetails', blog.dataValues)
 })
 
@@ -121,7 +144,7 @@ router.post('/login', (req, res) => {
                     req.session.firstName = registerdUser.first_name
                     req.session.lastName = registerdUser.lastname
 
-                    res.redirect('/blog')
+                    res.redirect('/')
                 }
             } else {
                 res.render('login', { errorMsg: 'Username or password is incorrect.' })

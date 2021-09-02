@@ -6,16 +6,27 @@ const newestBtn = document.getElementById('newestBtn')
 const oldestBtn = document.getElementById('oldestBtn')
 const mainImageBox = document.getElementById('mainImageBox')
 
+function formatDate(blogs) {
+    blogs.map((blog) => {
+        let newDate = new Date(blog.createdAt)
+
+        const month = newDate.getMonth() + 1
+        const day = newDate.getDate()
+        const year = newDate.getFullYear()
+        blog.createdAt = `${month}/${day}/${year}`
+    })
+}
 
 function sortByNewest() {
     fetch('http://localhost:8080/sort-by-newest')
         .then(response => response.json())
         .then(blogs => {
+            formatDate(blogs)
             sortedBlogs = blogs.map((blog) => {
                 return `<div id="container">
                             <div class="fill"><img src="${blog.image}" alt=""></div>
-                            <div id = "description">
-                                <a href="/details/${blog.id}">
+                            <div id="description">
+                                <a id="blogTitle" href="/details/${blog.id}">
                                     <h3>${blog.title}</h3>
                                 </a>
                                 <p>${blog.createdAt}</p>
@@ -30,11 +41,12 @@ function sortByOldest() {
     fetch('http://localhost:8080/sort-by-Oldest')
         .then(response => response.json())
         .then(blogs => {
+            formatDate(blogs)
             sortedBlogs = blogs.map((blog) => {
                 return `<div id="container">
                         <div class="fill"><img src="${blog.image}" alt=""></div>
-                        <div id = "description">
-                            <a href="/details/${blog.id}">
+                        <div id="description">
+                            <a id="blogTitle" href="/details/${blog.id}">
                                 <h3>${blog.title}</h3>
                             </a>
                             <p>${blog.createdAt}</p>
@@ -50,7 +62,7 @@ function displayComment(result) {
         .then(response => response.json())
         .then(comments => {
             let commentItems = comments.map((comment) => {
-                return `<div id="eachComment">
+                return `<div id="each">
             <p>${comment.body_text}</p>
             </div>`
             })

@@ -7,14 +7,12 @@ router.get('/', async(req, res) => {
 })
 
 router.get('/display-profile', async(req, res) => {
-    console.log(req.session.user_id)
     const profile = await models.User.findByPk(req.session.user_id, {
         include: [{
             model: models.Blog,
             as: 'blogs'
         }]
     })
-    console.log(profile.dataValues)
     res.render('profile', profile.dataValues)
 })
 
@@ -39,14 +37,13 @@ router.post('/post-blog', async(req, res) => {
 
 router.post('/delete-blog', async(req, res) => {
     const { deletedID } = req.body
-    console.log(deletedID)
 
     const deletedBlog = await models.Blog.destroy({
         where: {
             id: parseInt(deletedID)
         }
     })
-    console.log(deletedBlog)
+
     res.redirect('/blog/display-profile')
 })
 

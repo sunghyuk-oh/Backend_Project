@@ -4,8 +4,7 @@ body {
 }
 
 #postBtn {
-    align-content: center;
-    display: flex;
+    margin-right: 2em;
 }
 
 .container-fluid {
@@ -89,12 +88,12 @@ header div {
 }
 
 #bodyTextBox {
-    width: 50em;
+    width: 43.7em;
     height: 4em;
-    margin-left: 5.6em;
+    margin-left: 6.9em;
     border: solid;
     border-width: .2em;
-    border-radius: em;
+
     border-color: black;
 }
 
@@ -120,7 +119,7 @@ header div {
 
 #commentBox {
     display: flex;
-    flex-direction: column;
+    font-size: 20px;;
     justify-content: center;
     text-align: center;
     width: 50em;
@@ -129,5 +128,97 @@ header div {
 
 #each {
     display: flex;
+    background-color: #d8d4d4;
+    margin-left: .2em;
+    padding: .5em;
+    font-size: 20px;
     border: solid .1em;
+    width: 35em;
+
+}
+
+/*    *******MEDIA QUERIES********* */
+
+@media only screen and (max-width:767px) {
+    #mainImageBox {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: fit-content;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    #bottom {
+        display: none;
+    }
+    #imageText {
+        display: none;
+    }
+    .fill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 25em;
+        width: 25em;
+        border: solid;
+        border-width: .5em;
+        border-radius: 5em;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    #mainImageBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: fit-content;
+    }
+    #container {
+        justify-content: center;
+        align-items: center;
+        height: 40em;
+        width: 60vh;
+    }
+    .fill {
+        height: 30em;
+        width: 90vh;
+    }
+}
+
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+    #mainImageBox {
+        display: flex;
+        justify-content: flex-start;
+        height: fit-content;
+    }
+    #container {
+        justify-content: center;
+        align-items: center;
+        height: 40em;
+        width: 60vh;
+        margin: auto;
+    }
+    .fill {
+        display: flex;
+        overflow: hidden;
+        height: 25em;
+        width: 26em;
+        border: solid;
+        border-width: .5em;
+        border-radius: 5em;
+        border-color: black;
+    }
+    .fill img {
+        min-height: 100%;
+        min-width: 100%;
+        object-fit: cover;
+    }
 }

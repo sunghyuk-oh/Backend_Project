@@ -36,20 +36,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-                    
-                        <li class="nav-item">
-                            <div id="postBtn" style="float: right;">
-                                
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            
-                        </li>
+                
                     </ul>
                         <div class="d-flex">
                             <p>{{loginErrorMsg}}</p>
                             <a href="/blog/post-blog">
-                                <button style="color:white;" type="button" class="btn btn-outline-secondary ">Post A Blog</button>
+                                <button id="postBtn" style="color:white; margin-right: 2em;" type="button" class="btn btn-outline-secondary ">Post A Blog</button>
                             </a>
                             {{^isAuthenticated}}
                             <a class="nav-link" href="/login">Login</a>

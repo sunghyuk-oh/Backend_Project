@@ -4,8 +4,7 @@ body {
 }
 
 #postBtn {
-    align-content: center;
-    display: flex;
+    margin-right: 2em;
 }
 
 .container-fluid {

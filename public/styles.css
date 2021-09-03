@@ -1,6 +1,7 @@
 body {
     background-color: #708090;
     font-family: 'Poppins', sans-serif;
+    min-width: fit-content;
 }
 
 #postBtn {
@@ -109,8 +110,8 @@ header div {
 
 #description {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+   
+    justify-content: center;
     text-align: center;
     height: 6em;
     width: 20em;

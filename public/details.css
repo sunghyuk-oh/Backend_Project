@@ -1,6 +1,7 @@
 body {
     background-color: #708090;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 #postBtn {
@@ -20,10 +21,6 @@ body {
     width: 5em;
 }
 
-#middleContainer {
-    display: flex;
-    background-color: darkgrey;
-}
 
 header {
     text-align: center;
@@ -50,7 +47,7 @@ header div {
     flex-direction: column;
     width: 60em;
     align-items: center;
-    height: 55em;
+    height: fit-content;
 }
 
 .fill {
@@ -84,7 +81,9 @@ header div {
 #blogBody {
     display: flex;
     width: 50em;
+    height: 22em;
     text-align: center;
+    overflow: scroll;
 }
 
 #bodyTextBox {
@@ -141,7 +140,7 @@ header div {
 
 /*    *******MEDIA QUERIES********* */
 
-@media only screen and (max-width: 499px) {
+edia only screen and (max-width: 499px) {
     #mainImageBox {
         display: flex;
         flex-direction: column;
@@ -152,7 +151,7 @@ header div {
     #container {
         justify-content: center;
         align-items: center;
-        height: 40em;
+        height: fit-content;
         width: 60vh;
     }
     .fill {
@@ -179,18 +178,18 @@ header div {
     }
 }
 
-@media only screen and (min-width: 500px) and (max-width: 767px) {
+@media only screen and (min-width: 360px) and (max-width: 767px) {
     #mainImageBox {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         height: fit-content;
     }
     #container {
         justify-content: center;
         align-items: center;
-        height: 40em;
+        height: fit-content;
         width: 60vh;
     }
     .fill {
@@ -199,11 +198,30 @@ header div {
         align-items: center;
         overflow: hidden;
         height: 25em;
-        width: 25em;
+        width: 30em;
+    }
+    #blogBody {
+        display: flex;
+        width: 30em;
+        text-align: center;
+        height: 20em;
+    }
+    #bodyTextBox{
+        width: 30em ;
+        
+            }
+    #commentFormBox{
+        width: 30em;
+    }
+    #commentBox{
+        width: 30em;
+    }
+    .each{
+        width: 22em;
     }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1023px) {
+@media only screen and (min-width: 768px) and (max-width: 999px) {
     #mainImageBox {
         display: flex;
         flex-direction: column;
@@ -214,7 +232,7 @@ header div {
     #container {
         justify-content: center;
         align-items: center;
-        height: 40em;
+        height: fit-content;
         width: 60vh;
     }
     .fill {
@@ -223,11 +241,60 @@ header div {
         align-items: center;
         overflow: hidden;
         height: 30em;
-        width: 35em;
+        width: 39em;
+    }
+    #blogBody {
+        display: flex;
+        width: 39em;
+        text-align: center;
+        height: 20em;
+    }
+    
+    #commentFormBox{
+        width: 45em;
+    }
+    .each{
+        width: 25em;
+    }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1259px) {
+    #mainImageBox {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: fit-content;
+    }
+    #container {
+        justify-content: center;
+        align-items: center;
+        height: fit-content;
+        width: 60vh;
+    }
+    .fill {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        height: 30em;
+        width: 39em;
+    }
+    #blogBody {
+        display: flex;
+        width: 39em;
+        text-align: center;
+        height: 22em;
+        
+    }
+    #commentFormBox{
+        width: 45em;
+    }
+    .each{
+        width: 25em;
     }
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+@media only screen and (min-width: 1260px) {
     #mainImageBox {
         display: flex;
         justify-content: flex-start;
@@ -236,7 +303,7 @@ header div {
     #container {
         justify-content: center;
         align-items: center;
-        height: 40em;
+        height: fit-content;
         width: 60vh;
         margin: auto;
     }
@@ -244,7 +311,7 @@ header div {
         display: flex;
         overflow: hidden;
         height: 25em;
-        width: 26em;
+        width: 44em;
         border: solid;
         border-width: .5em;
         border-radius: 5em;
